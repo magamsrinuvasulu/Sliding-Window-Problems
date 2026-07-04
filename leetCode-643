@@ -1,0 +1,23 @@
+package SlidingWindow;
+
+public class leetCode643 {
+
+	public static void main(String[] args) {
+		int[] nums= {1,12,-5,-6,50,3};
+		int l=0,sum=0;
+		int k=4;
+		double max=Integer.MIN_VALUE;
+		for(int r=0;r<nums.length;r++) {
+			sum+=nums[r];
+			if(r-l+1>k) {
+				sum-=nums[l];
+				l++;
+			}
+			if(r-l+1==k) {
+				max=Math.max(max,sum/(double)k);
+			}
+		}
+		System.out.println("Maximum length:"+max);
+	}
+
+}
