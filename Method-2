@@ -1,0 +1,18 @@
+package SlidingWindow;
+
+public class AlternativeMethod {
+	public static void main(String[] args) {
+		int[] nums= {14,2,1,7,9,0,2,1,1,0};
+		int k=3;
+		int sum,l=0;
+		int max=Integer.MIN_VALUE;
+		for(int i=0;i<nums.length;i++) {
+			sum=0;
+			for(int j=i;j<k;j++) {
+				sum+=nums[j];
+			}
+			max=Math.max(max, sum);
+		}
+		System.out.println("Maximu Sum:"+max);
+	}
+}
